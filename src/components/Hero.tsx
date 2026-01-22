@@ -9,7 +9,6 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Profiilikuva */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -28,7 +27,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Sisältö */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -43,16 +41,15 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-6">
-            AI Builder & Technical Orchestrator
+            Tekoälyrakentaja ja tekninen orkestroija
           </p>
 
           <p className="text-gray-300 mb-8 max-w-lg">
-            Orkestroin tekoälyagentteja (Claude Code, Antigravity) kokonaisten 
-            järjestelmien rakentamiseen. Yhdistän Datanomi-taustan IT-osaamisen ja 
-            modernin AI-orkestroinnin – 4,7M TikTok-näyttökertaa todistaa tulokset.
+            En koodaa manuaalisesti – ohjaan maailman edistyneimpiä tekoälyagentteja 
+            rakentamaan kestäviä ratkaisuja. Yhdistän Datanomi-taustan IT-osaamisen 
+            ja modernin AI-orkestroinnin.
           </p>
 
-          {/* Yhteystiedot */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
             <a
               href={`mailto:${contact.email}`}
@@ -70,7 +67,6 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Sosiaalinen & CV-lataus */}
           <div className="flex gap-4 justify-center md:justify-start">
             <a
               href={contact.github}
@@ -94,7 +90,7 @@ export default function Hero() {
               className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 rounded-full text-white font-medium transition-all"
             >
               <Download size={18} />
-              Lataa CV (2026)
+              Lataa CV
             </a>
           </div>
         </motion.div>
