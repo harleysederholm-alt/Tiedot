@@ -65,7 +65,7 @@ export default function Footer() {
         {/* Tekijänoikeus */}
         <div className="mt-8 pt-8 border-t border-white/5 text-center">
           <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
-            Rakennettu <Heart size={14} className="text-red-500" /> Suomessa · 2026
+            Harley Christian Sederholm · 2026
           </p>
         </div>
       </div>
