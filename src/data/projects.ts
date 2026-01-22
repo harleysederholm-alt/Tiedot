@@ -159,6 +159,6 @@ export const contact = {
   email: 'harley.sederholm@gmail.com',
   phone: '0466560357',
   github: 'https://github.com/harleysederholm-alt',
-  linkedin: 'https://www.linkedin.com/in/harley-christian-sederholm-625956364',
+  linkedin: 'https://www.linkedin.com/in/harley-christian-sederholm-625966364/',
   website: 'https://funkyscbdkauppa.com',
 };
