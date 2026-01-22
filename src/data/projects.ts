@@ -31,7 +31,7 @@ export const projects: Project[] = [
     techStack: ['Python', 'Gemini 2.0 Flash', 'GitHub CLI', 'AST Analysis'],
     achievements: ['Multi-repo batch processing', 'Self-healing code', 'Automated Pull Requests'],
     category: 'ai',
-    isPrivate: true,
+    isPrivate: false,
     githubUrl: 'https://github.com/harleysederholm-alt/DiamondCLI',
   },
   {
@@ -69,18 +69,18 @@ export const projects: Project[] = [
   },
   {
     id: 'repoblueprint-ai',
-    name: 'RepoBlueprint AI',
+    name: 'Blueprint',
     tagline: 'Architecture Engine for Any Codebase',
     description: 'Transforms repositories into comprehensive architecture models using AST parsing (Tree-sitter) and local LLMs (Ollama). Generates interactive C4 diagrams and natural language queries.',
     techStack: ['Python', 'FastAPI', 'Next.js', 'Tree-sitter', 'Ollama', 'NetworkX'],
     achievements: ['Automated C4 diagrams', 'Natural language architecture queries', 'Premium UI/UX'],
     category: 'ai',
     isPrivate: false,
-    githubUrl: 'https://github.com/harleysederholm-alt/BluePrint',
+    githubUrl: 'https://github.com/harleysederholm-alt/Blueprint',
   },
   {
     id: 'phantomi-website',
-    name: 'Phantomi (Website)',
+    name: 'Phantomiverkkosivut',
     tagline: 'Cinematic 3D Marketing for Zero-Trace Protocol',
     description: 'Ultra-immersive marketing website for the Phantomi encrypted messaging protocol. Features scroll-driven 3D scenes (Three.js), post-processing effects, and bilingual FI/EN support.',
     techStack: ['Next.js 15', 'React Three Fiber', 'Three.js', 'Framer Motion', 'TypeScript'],
@@ -91,21 +91,21 @@ export const projects: Project[] = [
   },
   {
     id: 'phantomi-messenger',
-    name: 'Phantomi Messenger',
+    name: 'Phantomi',
     tagline: 'Zero-Trace End-to-End Encrypted Messaging',
     description: 'Secure ephemeral messaging platform with military-grade encryption (ECDH P-521 + AES-256-GCM). Server acts as blind relay with RAM-only operation. Messages self-destruct after 60 seconds.',
-    techStack: ['Node.js', 'Socket.io', 'Web Crypto API', 'Flutter', 'PWA'],
+    techStack: ['Node.js', 'Socket.io', 'Web Crypto API', 'Dart/Flutter', 'PWA'],
     achievements: ['Perfect Forward Secrecy', 'One-time invite links', 'Post-Quantum roadmap (Kyber)'],
     category: 'security',
-    isPrivate: false,
-    githubUrl: 'https://github.com/harleysederholm-alt/Viesti',
+    isPrivate: true,
+    githubUrl: 'https://github.com/harleysederholm-alt/Phantomi',
   },
   {
     id: 'verifiable-polymath',
-    name: 'Verifiable Polymath',
+    name: 'verifiable-polymath',
     tagline: 'Neuro-Symbolic Physics Integrity Engine',
     description: 'Industrial-grade AI verification system combining Lean 4 formal proofs with Physics-Informed Neural Networks. Guarantees mathematical integrity for safety-critical applications.',
-    techStack: ['PyTorch', 'Lean 4', 'Mamba-2 SSM', 'BitNet', 'Streamlit', 'Z3'],
+    techStack: ['Python', 'PyTorch', 'Lean 4', 'Mamba-2 SSM', 'Streamlit', 'Z3'],
     achievements: ['1.59ms avg latency', '>600 Hz verification', 'MHD violation detection'],
     category: 'ai',
     isPrivate: true,
@@ -113,7 +113,7 @@ export const projects: Project[] = [
   },
   {
     id: 'cvtekija',
-    name: 'CV-Tekijä',
+    name: 'cvtekija',
     tagline: 'GDPR-Compliant Local AI CV Builder',
     description: 'Modern CV builder with 100% client-side processing using WebLLM. Features AI text optimization, ATS compatibility analysis, and professional PDF export with Finnish localization.',
     techStack: ['Next.js 14', 'WebLLM', 'Zustand', 'PDF Renderer', 'TypeScript'],
@@ -124,25 +124,47 @@ export const projects: Project[] = [
   },
 ];
 
+// CORRECTED TIMELINE - Based on verified CV documents
 export const timeline = [
-  { year: '2013', title: 'Datanom', description: 'Valmistuminen ja uran alku' },
-  { year: '2013-2018', title: 'Software Developer', description: 'IT-tuki, verkkosivut, ohjelmoinnin perusteet' },
-  { year: '2018-2024', title: 'Full Stack Developer', description: 'Web-sovellukset, pilvi-infrastruktuuri, konsultointi' },
-  { year: '2024-2026', title: 'AI Startup Founder', description: 'Autonomiset agentit, SLM-optimointi, tuotekehitys' },
+  { 
+    year: '2011–2013', 
+    title: 'Datanomi', 
+    description: 'Tieto- ja viestintätekniikan perustutkinto, Tredu' 
+  },
+  { 
+    year: '2013–2014', 
+    title: 'Asepalvelus (Aliupseeri)', 
+    description: 'Nenosen tulenavauskisa SM-mitali' 
+  },
+  { 
+    year: '2013, 2019', 
+    title: 'IT-tuki & Logistiikka', 
+    description: 'Mikrotukihenkilö (Ruovesi), Varastotyöntekijä (Helsinki). Itseopiskelu ja No-code -harrastuneisuus.' 
+  },
+  { 
+    year: 'Maaliskuu 2025 →', 
+    title: 'Markkinointijohtaja & Perustaja', 
+    description: 'Funkyscbdkauppa.com – 4,7M TikTok-näyttökertaa, 5200+ seuraajaa' 
+  },
+  { 
+    year: '2025–2026', 
+    title: 'AI Builder & Founder', 
+    description: 'Täysipäiväinen AI-tuotekehitys. Autonomiset agentit, SLM-optimointi.' 
+  },
 ];
 
 export const skills = {
-  ai: ['Gemini 3 Pro', 'Claude 4.5 Sonnet', 'GPT-OSS 120B', 'Ollama', 'LangChain', 'RAG'],
-  languages: ['Python', 'TypeScript', 'Rust'],
-  frontend: ['Next.js 16', 'React 19', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
-  backend: ['FastAPI', 'Node.js', 'WebSocket', 'Kafka'],
-  infra: ['Docker', 'Kubernetes', 'GitHub Actions', 'Vercel'],
-  data: ['PostgreSQL', 'Supabase', 'Redis', 'Vector DBs'],
+  ai: ['Gemini 2.0 Flash', 'Ollama', 'LangChain', 'RAG', 'Prompt Engineering'],
+  languages: ['Python', 'TypeScript', 'JavaScript'],
+  frontend: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
+  backend: ['FastAPI', 'Node.js', 'WebSocket'],
+  infra: ['Docker', 'GitHub Actions', 'Vercel'],
+  data: ['PostgreSQL', 'Supabase', 'Redis'],
 };
 
 export const contact = {
   email: 'harley.sederholm@gmail.com',
   phone: '0466560357',
   github: 'https://github.com/harleysederholm-alt',
-  linkedin: 'https://linkedin.com/in/harleysederholm',
+  website: 'https://funkyscbdkauppa.com',
 };

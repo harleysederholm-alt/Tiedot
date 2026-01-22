@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Mail, Phone, Github, Linkedin, Download } from 'lucide-react';
+import { Mail, Phone, Github, ExternalLink, Download } from 'lucide-react';
 import { contact } from '@/data/projects';
 
 export default function Hero() {
@@ -43,12 +43,13 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-6">
-            AI-Arkitehti & Startup-Yrittäjä
+            AI Builder & Founder
           </p>
 
           <p className="text-gray-300 mb-8 max-w-lg">
-            Rakennan autonomisia AI-järjestelmiä ja tuotteita, jotka ratkaisevat oikeita ongelmia.
-            Datanomista (2013) AI-startup-perustajaksi – matka jatkuvaan oppimiseen.
+            Rakennan AI-sovelluksia ja verkkokauppoja alusta loppuun. 
+            Yhdistän markkinointivaiston tekniseen toteutukseen – 
+            4,7 miljoonaa TikTok-näyttökertaa todistaa tulokset.
           </p>
 
           {/* Contact Links */}
@@ -80,12 +81,12 @@ export default function Hero() {
               <Github size={24} className="text-gray-300" />
             </a>
             <a
-              href={contact.linkedin}
+              href={contact.website}
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
             >
-              <Linkedin size={24} className="text-gray-300" />
+              <ExternalLink size={24} className="text-gray-300" />
             </a>
             <a
               href="/cv_harley_2026.pdf"
