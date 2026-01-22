@@ -67,27 +67,32 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="flex gap-4 justify-center md:justify-start">
-            <a
-              href={contact.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
-            >
-              <Github size={24} className="text-gray-300" />
-            </a>
-            <a
-              href={contact.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
-            >
-              <ExternalLink size={24} className="text-gray-300" />
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full sm:w-auto">
+            <div className="flex gap-4 justify-center w-full sm:w-auto">
+              <a
+                href={contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={24} className="text-gray-300" />
+              </a>
+              <a
+                href={contact.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
+                aria-label="Website"
+              >
+                <ExternalLink size={24} className="text-gray-300" />
+              </a>
+            </div>
+            
             <a
               href="/cv_harley_2026.pdf"
               download
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 rounded-full text-white font-medium transition-all"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 rounded-full text-white font-medium transition-all w-full sm:w-auto"
             >
               <Download size={18} />
               Lataa CV
@@ -95,7 +100,7 @@ export default function Hero() {
             <a
               href="/saatekirje_harley_2026.pdf"
               download
-              className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all w-full sm:w-auto"
             >
               <Download size={18} />
               Lataa Saatekirje
