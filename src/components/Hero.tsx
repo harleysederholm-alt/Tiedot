@@ -41,7 +41,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-6">
-            Enemmän kuin koodia — rakennan ratkaisuja, jotka toimivat.
+            Älykästä arkkitehtuuria – orkestroituna tulevaisuuden työkaluilla
           </p>
 
           <p className="text-gray-300 mb-8 max-w-lg">
