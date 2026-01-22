@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, Github, ExternalLink, Heart } from 'lucide-react';
+import { Mail, Phone, Github, ExternalLink, Heart, Linkedin } from 'lucide-react';
 import { contact } from '@/data/projects';
 
 export default function Footer() {
@@ -50,6 +50,14 @@ export default function Footer() {
               className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
             >
               <Github size={20} className="text-gray-400" />
+            </a>
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <Linkedin size={20} className="text-gray-400" />
             </a>
             <a
               href={contact.website}

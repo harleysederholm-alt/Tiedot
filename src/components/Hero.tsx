@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Mail, Phone, Github, ExternalLink, Download } from 'lucide-react';
+import { Mail, Phone, Github, ExternalLink, Download, Linkedin } from 'lucide-react';
 import { contact } from '@/data/projects';
 
 export default function Hero() {
@@ -75,6 +75,15 @@ export default function Hero() {
                 aria-label="GitHub"
               >
                 <Github size={24} className="text-gray-300" />
+              </a>
+              <a
+                href={contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 hover:bg-white/10 rounded-full transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={24} className="text-gray-300" />
               </a>
               <a
                 href={contact.website}
