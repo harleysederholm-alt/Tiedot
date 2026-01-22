@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lock, Globe, Cpu, Database } from 'lucide-react';
+import { Lock, Globe, Cpu, Database, Rocket } from 'lucide-react';
 import type { Project } from '@/data/projects';
 
 const categoryIcons = {
@@ -9,6 +9,7 @@ const categoryIcons = {
   security: Lock,
   web: Globe,
   data: Database,
+  saas: Rocket,
 };
 
 const categoryColors = {
@@ -16,6 +17,7 @@ const categoryColors = {
   security: 'from-red-500 to-orange-500',
   web: 'from-emerald-500 to-cyan-500',
   data: 'from-blue-500 to-indigo-500',
+  saas: 'from-yellow-500 to-orange-500',
 };
 
 interface ProjectCardProps {
@@ -33,8 +35,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
+      className={`group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300 ${
+        project.isFlagship 
+          ? 'border-yellow-500/50 hover:border-yellow-400 ring-1 ring-yellow-500/20' 
+          : 'border-white/10 hover:border-white/20'
+      }`}
     >
+      {/* Flagship Badge */}
+      {project.isFlagship && (
+        <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-yellow-500 to-orange-500 text-black">
+          🚀 FLAGSHIP
+        </div>
+      )}
+
       {/* Category Badge */}
       <div className={`absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${gradient} text-white`}>
         {project.category.toUpperCase()}
@@ -89,18 +102,31 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         )}
       </div>
 
-      {/* GitHub Link */}
-      {project.githubUrl && (
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-        >
-          <Globe size={14} />
-          Näytä GitHub
-        </a>
-      )}
+      {/* Links */}
+      <div className="flex gap-4">
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-yellow-400 hover:text-yellow-300 transition-colors font-medium"
+          >
+            <Globe size={14} />
+            Live Demo
+          </a>
+        )}
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            <Globe size={14} />
+            GitHub
+          </a>
+        )}
+      </div>
     </motion.article>
   );
 }

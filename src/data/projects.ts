@@ -5,13 +5,27 @@ export interface Project {
   description: string;
   techStack: string[];
   achievements: string[];
-  category: 'ai' | 'security' | 'web' | 'data';
+  category: 'ai' | 'security' | 'web' | 'data' | 'saas';
   isPrivate: boolean;
+  isFlagship?: boolean;
   githubUrl?: string;
   liveUrl?: string;
 }
 
 export const projects: Project[] = [
+  {
+    id: 'pienhankintavahti',
+    name: 'Pienhankintavahti',
+    tagline: 'Löydä julkiset ja yksityiset urakat – ilman byrokratiaa',
+    description: 'Suomen älykkäin markkinapaikka, joka yhdistää HILMA-ilmoitukset, ennakoidut budjettitiedot ja yritysten suorat tarjouspyynnöt. Tekoäly etsii työt, tulkkaa ehdot ja auttaa voittamaan.',
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Groq/Llama 3', 'Stripe', 'Parallel Harvester'],
+    achievements: ['98% AI-analyysin osumatarkkuus', 'Automaattinen tarjouspyyntöjen tulkinta', '160+ committia tuotannossa'],
+    category: 'saas',
+    isPrivate: true,
+    isFlagship: true,
+    githubUrl: 'https://github.com/harleysederholm-alt/Pienhankintavahti',
+    liveUrl: 'https://pienhankintavahti.fi',
+  },
   {
     id: 'resilientnav-ai',
     name: 'ResilientNav AI',
@@ -124,7 +138,7 @@ export const projects: Project[] = [
   },
 ];
 
-// CORRECTED TIMELINE - Based on verified CV documents
+// VERIFIED TIMELINE - Based on user's CV documents
 export const timeline = [
   { 
     year: '2011–2013', 
@@ -134,31 +148,31 @@ export const timeline = [
   { 
     year: '2013–2014', 
     title: 'Asepalvelus (Aliupseeri)', 
-    description: 'Nenosen tulenavauskisa SM-mitali' 
+    description: 'SM-mitali tulenavauksessa' 
   },
   { 
-    year: '2013, 2019', 
-    title: 'IT-tuki & Logistiikka', 
-    description: 'Mikrotukihenkilö (Ruovesi), Varastotyöntekijä (Helsinki). Itseopiskelu ja No-code -harrastuneisuus.' 
+    year: '2019', 
+    title: 'Varastotyöntekijä', 
+    description: 'Helsingin Kierrätyskeskus, Espoo' 
   },
   { 
     year: 'Maaliskuu 2025 →', 
     title: 'Markkinointijohtaja & Perustaja', 
-    description: 'Funkyscbdkauppa.com – 4,7M TikTok-näyttökertaa, 5200+ seuraajaa' 
+    description: 'Funkyscbdkauppa.com – 4,7M TikTok-näyttökertaa' 
   },
   { 
     year: '2025–2026', 
     title: 'AI Builder & Founder', 
-    description: 'Täysipäiväinen AI-tuotekehitys. Autonomiset agentit, SLM-optimointi.' 
+    description: '11 AI-projektia: Pienhankintavahti, ResilientNav-AI, VALO ym.' 
   },
 ];
 
 export const skills = {
-  ai: ['Gemini 2.0 Flash', 'Ollama', 'LangChain', 'RAG', 'Prompt Engineering'],
+  ai: ['Gemini 2.0 Flash', 'Groq/Llama 3', 'Ollama', 'LangChain', 'RAG', 'Prompt Engineering'],
   languages: ['Python', 'TypeScript', 'JavaScript'],
   frontend: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
-  backend: ['FastAPI', 'Node.js', 'WebSocket'],
-  infra: ['Docker', 'GitHub Actions', 'Vercel'],
+  backend: ['FastAPI', 'Node.js', 'WebSocket', 'Supabase'],
+  infra: ['Docker', 'GitHub Actions', 'Vercel', 'Stripe'],
   data: ['PostgreSQL', 'Supabase', 'Redis'],
 };
 
