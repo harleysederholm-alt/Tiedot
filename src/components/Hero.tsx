@@ -96,7 +96,7 @@ export default function Hero() {
               <a
                 href="/cv_harley_2026.pdf"
                 download
-                className="group flex items-center justify-center gap-3 px-8 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_-5px_rgba(16,185,129,0.5)] w-full sm:w-auto"
+                className="group flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_-5px_rgba(16,185,129,0.5)] w-full sm:w-auto whitespace-nowrap"
               >
                 <Download size={20} className="group-hover:-translate-y-0.5 transition-transform" />
                 Lataa CV
@@ -104,7 +104,7 @@ export default function Hero() {
               <a
                 href="/saatekirje_harley_2026.pdf"
                 download
-                className="group flex items-center justify-center gap-3 px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium rounded-xl transition-all w-full sm:w-auto"
+                className="group flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-medium rounded-xl transition-all w-full sm:w-auto whitespace-nowrap"
               >
                 <Download size={20} className="text-gray-400 group-hover:text-white transition-colors group-hover:-translate-y-0.5 transition-transform" />
                 Lataa Saatekirje
