@@ -92,6 +92,14 @@ export default function Hero() {
               <Download size={18} />
               Lataa CV
             </a>
+            <a
+              href="/saatekirje_harley_2026.pdf"
+              download
+              className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-white font-medium transition-all"
+            >
+              <Download size={18} />
+              Lataa Saatekirje
+            </a>
           </div>
         </motion.div>
       </div>
