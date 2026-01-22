@@ -32,7 +32,7 @@ export const projects: Project[] = [
     tagline: 'GNSS Jamming Detection & Resilient Navigation',
     description: 'Mission-critical navigation system with ML-based jamming detection and multi-sensor fusion. Combines LSTM + XGBoost ensemble with 15-state Extended Kalman Filter for GPS-denied environments.',
     techStack: ['Python', 'PyTorch', 'XGBoost', 'FastAPI', 'WebSocket', 'Docker'],
-    achievements: ['96.8% jamming detection accuracy', '159 tests passed', 'Real-time 3D dashboard'],
+    achievements: ['96,8% simuloitu tarkkuus häirinnän tunnistuksessa', '159 testiä läpäisty', 'Reaaliaikainen 3D-dashboard'],
     category: 'ai',
     isPrivate: true,
     githubUrl: 'https://github.com/harleysederholm-alt/ResilientNav-AI',
