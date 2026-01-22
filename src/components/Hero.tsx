@@ -43,13 +43,13 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-6">
-            AI Builder & Founder
+            AI Builder & Technical Orchestrator
           </p>
 
           <p className="text-gray-300 mb-8 max-w-lg">
-            Rakennan AI-sovelluksia ja verkkokauppoja alusta loppuun. 
-            Yhdistän markkinointivaiston tekniseen toteutukseen – 
-            4,7 miljoonaa TikTok-näyttökertaa todistaa tulokset.
+            Orkestroin tekoälyagentteja (Claude Code, Antigravity) kokonaisten 
+            järjestelmien rakentamiseen. Yhdistän teknisen ymmärryksen ja 
+            markkinointivaiston – 4,7M TikTok-näyttökertaa todistaa tulokset.
           </p>
 
           {/* Contact Links */}
