@@ -15,15 +15,15 @@ export default function Footer() {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8 items-center"
         >
-          {/* Brand */}
+          {/* Brändi */}
           <div>
             <h3 className="text-xl font-bold text-white mb-2">Harley Sederholm</h3>
             <p className="text-gray-400 text-sm">
-              AI Builder & Founder
+              AI Builder & Technical Orchestrator
             </p>
           </div>
 
-          {/* Contact */}
+          {/* Yhteystiedot */}
           <div className="flex flex-col gap-2">
             <a
               href={`mailto:${contact.email}`}
@@ -41,7 +41,7 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Social */}
+          {/* Sosiaalinen */}
           <div className="flex gap-4 md:justify-end">
             <a
               href={contact.github}
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* Copyright */}
+        {/* Tekijänoikeus */}
         <div className="mt-8 pt-8 border-t border-white/5 text-center">
           <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
             Rakennettu <Heart size={14} className="text-red-500" /> Suomessa · 2026

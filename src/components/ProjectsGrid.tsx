@@ -7,8 +7,8 @@ import ProjectCard from './ProjectCard';
 export default function ProjectsGrid() {
   return (
     <section id="projects" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+      <div className="max-w-6xl mx-auto">
+        {/* Osion otsikko */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,13 +19,12 @@ export default function ProjectsGrid() {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Projektit
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            10 tuotantotason projektia – AI-agentit, turvallinen viestintä, 
-            ja data-arkkitehtuurit. Yksityiset repot näkyvissä referensseinä.
+          <p className="text-gray-400 max-w-xl mx-auto">
+            AI-orkestroimalla rakennettuja järjestelmiä ja SaaS-ratkaisuja.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Projektiruudukko */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />

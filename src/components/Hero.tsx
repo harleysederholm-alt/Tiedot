@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Profile Image */}
+        {/* Profiilikuva */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -28,7 +28,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Content */}
+        {/* Sisältö */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -48,11 +48,11 @@ export default function Hero() {
 
           <p className="text-gray-300 mb-8 max-w-lg">
             Orkestroin tekoälyagentteja (Claude Code, Antigravity) kokonaisten 
-            järjestelmien rakentamiseen. Yhdistän teknisen ymmärryksen ja 
-            markkinointivaiston – 4,7M TikTok-näyttökertaa todistaa tulokset.
+            järjestelmien rakentamiseen. Yhdistän Datanomi-taustan IT-osaamisen ja 
+            modernin AI-orkestroinnin – 4,7M TikTok-näyttökertaa todistaa tulokset.
           </p>
 
-          {/* Contact Links */}
+          {/* Yhteystiedot */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
             <a
               href={`mailto:${contact.email}`}
@@ -70,7 +70,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Social & CV Download */}
+          {/* Sosiaalinen & CV-lataus */}
           <div className="flex gap-4 justify-center md:justify-start">
             <a
               href={contact.github}
