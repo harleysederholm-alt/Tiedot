@@ -40,9 +40,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-400 mb-6">
-            Älykästä arkkitehtuuria – orkestroituna tulevaisuuden työkaluilla
-          </p>
+            Älykästä arkkitehtuuria<br />orkestroituna tulevaisuuden työkaluilla
 
           <p className="text-gray-300 mb-8 max-w-lg">
             En koodaa manuaalisesti – ohjaan maailman edistyneimpiä tekoälyagentteja 
