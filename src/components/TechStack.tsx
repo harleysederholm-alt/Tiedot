@@ -2,15 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/data/projects';
-import { Brain, Code, Layout, Server, Cloud, Database } from 'lucide-react';
+import { Brain, Code, Layout, Server, Cloud, Zap } from 'lucide-react';
 
 const skillCategories = [
   { key: 'ai', label: 'AI & LLM', icon: Brain, color: 'from-purple-500 to-pink-500' },
+  { key: 'orchestration', label: 'AI Orchestration', icon: Zap, color: 'from-yellow-500 to-orange-500' },
   { key: 'languages', label: 'Kielet', icon: Code, color: 'from-orange-500 to-red-500' },
   { key: 'frontend', label: 'Frontend', icon: Layout, color: 'from-emerald-500 to-cyan-500' },
   { key: 'backend', label: 'Backend', icon: Server, color: 'from-blue-500 to-indigo-500' },
   { key: 'infra', label: 'Infra & DevOps', icon: Cloud, color: 'from-gray-400 to-gray-600' },
-  { key: 'data', label: 'Tietokannat', icon: Database, color: 'from-yellow-500 to-orange-500' },
 ];
 
 export default function TechStack() {
@@ -46,13 +46,20 @@ export default function TechStack() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+                className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 border ${
+                  category.key === 'orchestration' 
+                    ? 'border-yellow-500/50 ring-1 ring-yellow-500/20' 
+                    : 'border-white/10'
+                }`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`p-2 rounded-lg bg-gradient-to-br ${category.color}`}>
                     <Icon size={20} className="text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-white">{category.label}</h3>
+                  {category.key === 'orchestration' && (
+                    <span className="text-xs px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded-full">CORE</span>
+                  )}
                 </div>
 
                 <div className="flex flex-wrap gap-2">

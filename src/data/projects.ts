@@ -17,9 +17,9 @@ export const projects: Project[] = [
     id: 'pienhankintavahti',
     name: 'Pienhankintavahti',
     tagline: 'Löydä julkiset ja yksityiset urakat – ilman byrokratiaa',
-    description: 'Suomen älykkäin markkinapaikka, joka yhdistää HILMA-ilmoitukset, ennakoidut budjettitiedot ja yritysten suorat tarjouspyynnöt. Tekoäly etsii työt, tulkkaa ehdot ja auttaa voittamaan.',
+    description: 'Suomen älykkäin markkinapaikka, joka yhdistää HILMA-ilmoitukset, ennakoidut budjettitiedot ja yritysten suorat tarjouspyynnöt. Rakennettu 100% orkestroimalla Claude Codea ja Antigravitya.',
     techStack: ['Next.js', 'TypeScript', 'Supabase', 'Groq/Llama 3', 'Stripe', 'Parallel Harvester'],
-    achievements: ['98% AI-analyysin osumatarkkuus', 'Automaattinen tarjouspyyntöjen tulkinta', '160+ committia tuotannossa'],
+    achievements: ['98% AI-analyysin osumatarkkuus', 'Parallel Harvester Scaling', 'Early Bird Pricing + Stripe Integration'],
     category: 'saas',
     isPrivate: true,
     isFlagship: true,
@@ -138,42 +138,23 @@ export const projects: Project[] = [
   },
 ];
 
-// VERIFIED TIMELINE - Based on user's CV documents
+// VERIFIED TIMELINE
 export const timeline = [
-  { 
-    year: '2011–2013', 
-    title: 'Datanomi', 
-    description: 'Tieto- ja viestintätekniikan perustutkinto, Tredu' 
-  },
-  { 
-    year: '2013–2014', 
-    title: 'Asepalvelus (Aliupseeri)', 
-    description: 'SM-mitali tulenavauksessa' 
-  },
-  { 
-    year: '2019', 
-    title: 'Varastotyöntekijä', 
-    description: 'Helsingin Kierrätyskeskus, Espoo' 
-  },
-  { 
-    year: 'Maaliskuu 2025 →', 
-    title: 'Markkinointijohtaja & Perustaja', 
-    description: 'Funkyscbdkauppa.com – 4,7M TikTok-näyttökertaa' 
-  },
-  { 
-    year: '2025–2026', 
-    title: 'AI Builder & Founder', 
-    description: '11 AI-projektia: Pienhankintavahti, ResilientNav-AI, VALO ym.' 
-  },
+  { year: '2011–2013', title: 'Datanomi', description: 'Tieto- ja viestintätekniikan perustutkinto, Tredu' },
+  { year: '2013–2014', title: 'Asepalvelus (Aliupseeri)', description: 'SM-mitali tulenavauksessa' },
+  { year: '2019', title: 'Varastotyöntekijä', description: 'Helsingin Kierrätyskeskus, Espoo' },
+  { year: 'Maaliskuu 2025 →', title: 'Markkinointijohtaja & Perustaja', description: 'Funkyscbdkauppa.com – 4,7M TikTok-näyttökertaa' },
+  { year: '2025–2026', title: 'AI Builder & Technical Orchestrator', description: '11 AI-projektia orkestroimalla Claude Code & Antigravity' },
 ];
 
+// UPDATED 2026 TECH STACK
 export const skills = {
-  ai: ['Gemini 2.0 Flash', 'Groq/Llama 3', 'Ollama', 'LangChain', 'RAG', 'Prompt Engineering'],
+  ai: ['Gemini 3 Pro', 'Gemini 3 Flash', 'Claude 4.5 Sonnet', 'Claude 4.5 Opus', 'GPT-OSS 120B', 'Ollama'],
+  orchestration: ['Claude Code', 'Google Antigravity', 'Agentic Workflows', 'Prompt Engineering'],
   languages: ['Python', 'TypeScript', 'JavaScript'],
   frontend: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
   backend: ['FastAPI', 'Node.js', 'WebSocket', 'Supabase'],
   infra: ['Docker', 'GitHub Actions', 'Vercel', 'Stripe'],
-  data: ['PostgreSQL', 'Supabase', 'Redis'],
 };
 
 export const contact = {
