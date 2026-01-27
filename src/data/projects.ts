@@ -49,6 +49,18 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/harleysederholm-alt/verifiable-polymath',
   },
   {
+    id: 'sovereign-climate',
+    name: 'Sovereign Climate Intelligence',
+    tagline: 'NASA-tasoinen ilmastosimulaatio ja Digital Twin',
+    description: 'v8.0 "Elite Command" -standardin ilmastomallintaja. Yhdistää 1D-EBM fysiikkamoottorin (Numba), Z3-formaalin verifioinnin ja elokuvallisen "Halo" -maapallon (Plotly 3D) nollaviiveellä.',
+    techStack: ['Python', 'Streamlit', 'Numba', 'Z3 Solver', 'Plotly'],
+    achievements: ['Zero-Lag 100v simulaatio (<2ms)', 'Military-Grade "Command Center" UI', 'Formal Physics Verification (Z3)'],
+    category: 'ai',
+    isPrivate: false,
+    isFlagship: true,
+    githubUrl: 'https://github.com/harleysederholm-alt/Sovereign-Climate-1D-EBM',
+  },
+  {
     id: 'diamondcli',
     name: 'DiamondCLI',
     tagline: 'Autonominen koodin refaktorointiagentti',
