@@ -150,12 +150,12 @@ export const projects: Project[] = [
   },
 
   {
-    id: 'sovereign-p2',
-    name: 'P2: Quantum Bloch State Sim',
-    tagline: '[ TULOSSA ] Sovereign Fleet Project',
-    description: 'Osa 100 projektin Sovereign-laivuetta. Kehityksessä.',
-    techStack: ['Python', 'AI'],
-    achievements: ['Sovereign Standard', 'Development Phase'],
+    id: 'sovereign-quantum',
+    name: 'Sovereign Quantum (P2)',
+    tagline: 'World-Class Quantum Mechanics Simulator (v4.0)',
+    description: 'Arkkitehtuuritason kvanttisimulaattori ("Unified Engine"). Yhdistää diskreetin Qubit-tilan (Bloch Sphere) ja jatkuvan aaltofunktion (Schrödinger SSFM) yhteen käyttöliittymään. Sisältää Z3-formaalin verifioinnin fysiikan laeille.',
+    techStack: ['Python', 'Streamlit', 'NumPy', 'Z3 Solver', 'Plotly 3D'],
+    achievements: ['Real-Time Quantum Tunneling Vis', 'Formal Physics Verification (Z3)', 'Hybrid Discrete/Continuous Engine'],
     category: 'ai',
     isPrivate: false,
     githubUrl: 'https://github.com/harleysederholm-alt/P2_Quantum-Bloch-State-Sim',
