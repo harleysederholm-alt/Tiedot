@@ -162,12 +162,12 @@ export const projects: Project[] = [
   },
 
   {
-    id: 'sovereign-p3',
-    name: 'P3: Stoichiometric Chem Solver',
-    tagline: '[ TULOSSA ] Sovereign Fleet Project',
-    description: 'Osa 100 projektin Sovereign-laivuetta. Kehityksessä.',
-    techStack: ['Python', 'AI'],
-    achievements: ['Sovereign Standard', 'Development Phase'],
+    id: 'sovereign-chemical',
+    name: 'Sovereign Chemical (P3)',
+    tagline: 'Enterprise-Grade Stoichiometry & Kinetics (v4.0)',
+    description: 'Teollisen tason kemialaboratorio. Ominaisuudet: Reaktiotasapainotus (Matrix Null Space), Kinetiikka (ODE/Arrhenius), PubChem-integraatio ja Z3-formaali verifiointi.',
+    techStack: ['Python', 'Streamlit', 'SciPy (ODE)', 'PubChemPy', 'Z3 Solver'],
+    achievements: ['Kinetic Energy Landscape Vis', 'Formal Mass Verification (Z3)', 'Real-time Arrhenius Simulation'],
     category: 'ai',
     isPrivate: false,
     githubUrl: 'https://github.com/harleysederholm-alt/P3_Stoichiometric-Chem-Solver',
