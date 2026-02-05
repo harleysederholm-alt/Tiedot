@@ -9,7 +9,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 export default function Home() {
   return (
     <LanguageProvider>
-      <main className="min-h-screen bg-white selection:bg-emerald-100 selection:text-emerald-900 relative">
+      <main className="min-h-screen bg-white selection:bg-emerald-100 selection:text-emerald-900 relative overflow-x-hidden">
         <LanguageSwitcher />
         <Hero />
         <TechStack />

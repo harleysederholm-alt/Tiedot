@@ -13,7 +13,7 @@ export default function ProjectsGrid() {
   return (
     <section id="projects" className="py-24 px-6 bg-white">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
            <div className="lg:col-span-1">
              <h2 className="font-outfit text-4xl font-bold text-slate-900 mb-4 whitespace-pre-line">
                {t.projects.title.replace(' ', '\n')}

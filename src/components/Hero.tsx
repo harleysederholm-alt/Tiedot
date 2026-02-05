@@ -29,7 +29,7 @@ export default function Hero() {
             <span className="text-slate-500 font-medium tracking-wide text-sm uppercase">{t.hero.status}</span>
           </div>
 
-          <h1 className="font-outfit text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-slate-900 leading-[0.95] tracking-tight mb-8">
+          <h1 className="font-outfit text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-slate-900 leading-[1.1] md:leading-[0.95] tracking-tight mb-8">
             {t.hero.role.split(' ').slice(0, 1)} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-500">
               {t.hero.role.split(' ').slice(1).join(' ')}

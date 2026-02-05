@@ -46,7 +46,7 @@ export default function TechStack() {
   return (
     <section id="capabilities" className="py-24 px-6 bg-slate-50 border-y border-slate-200">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
           <div className="lg:col-span-1">
             <h2 className="font-outfit text-4xl font-bold text-slate-900 mb-4 whitespace-pre-line">
               {t.techStack.title.replace(' ', '\n')}
