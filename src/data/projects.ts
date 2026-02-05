@@ -82,11 +82,7 @@ export const projects: Project[] = [
     isPrivate: true,
     isFlagship: false,
     githubUrl: 'https://github.com/harleysederholm-alt/Pienhankintavahti',
-    liveUrl: 'https://pienhankintavahti.fi',
-  },
   {
-<<<<<<< HEAD
-=======
     id: 'resilientnav-ai',
     name: 'ResilientNav AI',
     tagline: 'GNSS-häirinnän tunnistus ja navigointi',
@@ -143,7 +139,6 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/harleysederholm-alt/rekry-aly',
   },
   {
->>>>>>> 72c87be49ba8c96ac0e2c947660b04afd3d28c8b
     id: 'valo',
     name: 'VALO',
     tagline: 'Yhteiskunnallinen tilanneymmärrysjärjestelmä',
