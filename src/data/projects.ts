@@ -237,6 +237,6 @@ export const contact = {
   email: 'harley.sederholm@gmail.com',
   phone: '0466560557',
   github: 'https://github.com/harleysederholm-alt',
-  linkedin: 'https://linkedin.com/in/harley-sederholm',
+  linkedin: 'https://www.linkedin.com/in/harley-christian-sederholm-625966364/',
   location: 'Turku, Finland',
 };
