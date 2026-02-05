@@ -2,57 +2,55 @@
 
 import { motion } from 'framer-motion';
 import { timeline } from '@/data/projects';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Timeline() {
+  const { t } = useLanguage();
+
   return (
-    <section id="timeline" className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Osion otsikko */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Urapolku
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Datanomista AI-orkestroijaksi – kehityskaari 2011–2026.
-          </p>
-        </motion.div>
+    <section id="timeline" className="py-24 px-6 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-4 gap-12">
+          {/* Header Column */}
+          <div className="lg:col-span-1">
+            <h2 className="font-outfit text-4xl font-bold text-slate-900 mb-4 whitespace-pre-line">
+              {t.timeline.title.replace(' ', '\n')}
+            </h2>
+            <div className="h-1 w-20 bg-emerald-600 mb-6" />
+            <p className="text-slate-600 leading-relaxed">
+              {t.timeline.description}
+            </p>
+          </div>
 
-        {/* Aikajana */}
-        <div className="relative">
-          {/* Pystyviiva */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500 via-cyan-500 to-purple-500" />
-
-          {/* Tapahtumat */}
-          {timeline.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`relative flex items-center mb-8 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
-            >
-              {/* Piste */}
-              <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-gray-900 transform -translate-x-1/2 z-10" />
-
-              {/* Sisältö */}
-              <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <span className="text-emerald-400 text-sm font-medium">{item.year}</span>
-                  <h3 className="text-xl font-bold text-white mt-1">{item.title}</h3>
-                  <p className="text-gray-400 text-sm mt-2">{item.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          {/* Content Column */}
+          <div className="lg:col-span-3">
+             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-200 before:hidden">
+              {/* Custom aligned timeline instead of centered */}
+               <div className="border-l-2 border-slate-200 ml-3 pl-8 space-y-12">
+                {timeline.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative"
+                  >
+                    <span className="absolute -left-[41px] top-0 h-5 w-5 rounded-full border-4 border-white bg-slate-300 ring-2 ring-slate-100" />
+                    
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
+                       <h3 className="font-outfit text-xl font-bold text-slate-900">{item.title}</h3>
+                       <span className="text-sm font-mono text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 w-fit">{item.year}</span>
+                    </div>
+                    
+                    <p className="text-slate-600 max-w-2xl leading-relaxed">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                ))}
+               </div>
+             </div>
+          </div>
         </div>
       </div>
     </section>

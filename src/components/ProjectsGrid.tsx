@@ -3,32 +3,32 @@
 import { motion } from 'framer-motion';
 import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProjectsGrid() {
-  return (
-    <section id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Osion otsikko */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Projektit
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            AI-orkestroimalla rakennettuja järjestelmiä ja SaaS-ratkaisuja.
-          </p>
-        </motion.div>
+  const { t } = useLanguage();
 
-        {/* Projektiruudukko */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+  return (
+    <section id="projects" className="py-24 px-6 bg-white">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-4 gap-12 mb-16">
+           <div className="lg:col-span-1">
+             <h2 className="font-outfit text-4xl font-bold text-slate-900 mb-4 whitespace-pre-line">
+               {t.projects.title.replace(' ', '\n')}
+             </h2>
+             <div className="h-1 w-20 bg-slate-900 mb-6" />
+             <p className="text-slate-600 leading-relaxed">
+               {t.projects.description}
+             </p>
+           </div>
+           
+           <div className="lg:col-span-3">
+              <div className="grid md:grid-cols-2 gap-6">
+                {projects.map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} />
+                ))}
+              </div>
+           </div>
         </div>
       </div>
     </section>

@@ -3,21 +3,20 @@ import ProjectsGrid from "@/components/ProjectsGrid";
 import Timeline from "@/components/Timeline";
 import TechStack from "@/components/TechStack";
 import Footer from "@/components/Footer";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
-      {/* Background gradient */}
-      <div className="fixed inset-0 bg-gradient-to-br from-emerald-900/10 via-transparent to-cyan-900/10 pointer-events-none" />
-      
-      {/* Content */}
-      <div className="relative z-10">
+    <LanguageProvider>
+      <main className="min-h-screen bg-white selection:bg-emerald-100 selection:text-emerald-900 relative">
+        <LanguageSwitcher />
         <Hero />
+        <TechStack />
         <ProjectsGrid />
         <Timeline />
-        <TechStack />
         <Footer />
-      </div>
-    </main>
+      </main>
+    </LanguageProvider>
   );
 }

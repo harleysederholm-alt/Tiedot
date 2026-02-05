@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lock, Globe, Cpu, Database, Rocket } from 'lucide-react';
+import { Lock, Globe, Cpu, Database, Rocket, GitCommit, ArrowUpRight } from 'lucide-react';
 import type { Project } from '@/data/projects';
+import { useLanguage } from '@/context/LanguageContext';
 
 const categoryIcons = {
   ai: Cpu,
@@ -12,116 +13,86 @@ const categoryIcons = {
   saas: Rocket,
 };
 
-const categoryColors = {
-  ai: 'from-purple-500 to-pink-500',
-  security: 'from-red-500 to-orange-500',
-  web: 'from-emerald-500 to-cyan-500',
-  data: 'from-blue-500 to-indigo-500',
-  saas: 'from-yellow-500 to-orange-500',
-};
-
-const categoryLabels = {
-  ai: 'TEKOÄLY',
-  security: 'TIETOTURVA',
-  web: 'VERKKO',
-  data: 'DATA',
-  saas: 'SAAS',
-};
-
 interface ProjectCardProps {
   project: Project;
   index: number;
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const { t } = useLanguage();
   const Icon = categoryIcons[project.category];
-  const gradient = categoryColors[project.category];
-  const label = categoryLabels[project.category];
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className={`group relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300 ${
-        project.isFlagship 
-          ? 'border-yellow-500/50 hover:border-yellow-400' 
-          : 'border-white/10 hover:border-white/20'
-      }`}
+      className="group flex flex-col bg-white border border-slate-200 hover:border-slate-400 transition-colors h-full"
     >
-      {project.isFlagship && (
-        <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-yellow-500 to-orange-500 text-black">
-          KÄRKIHANKE
+      {/* Header Section */}
+      <div className="p-6 border-b border-slate-100 flex justify-between items-start">
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-slate-50 border border-slate-100 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors">
+            <Icon size={20} />
+          </div>
+          <div>
+            <h3 className="font-outfit text-lg font-bold text-slate-900 leading-tight">
+              {project.name}
+            </h3>
+            <p className="text-xs font-mono text-slate-500 mt-0.5 tracking-tight uppercase">
+              ID: {project.id.toUpperCase()}
+            </p>
+          </div>
         </div>
-      )}
-
-      <div className={`absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${gradient} text-white`}>
-        {label}
-        {project.isPrivate && ' • Yksityinen'}
-      </div>
-
-      <div className="flex items-start gap-4 mt-3 mb-4">
-        <div className={`p-3 rounded-xl bg-gradient-to-br ${gradient} opacity-80`}>
-          <Icon size={24} className="text-white" />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-            {project.name}
-          </h3>
-          <p className="text-sm text-gray-400">{project.tagline}</p>
-        </div>
-      </div>
-
-      <p className="text-gray-300 text-sm mb-4 line-clamp-3">
-        {project.description}
-      </p>
-
-      <div className="mb-4">
-        <h4 className="text-xs font-semibold text-gray-500 uppercase mb-2">Saavutukset</h4>
-        <ul className="space-y-1">
-          {project.achievements.slice(0, 3).map((achievement, i) => (
-            <li key={i} className="text-sm text-emerald-400 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              {achievement}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.techStack.slice(0, 5).map((tech) => (
-          <span
-            key={tech}
-            className="px-2 py-1 text-xs bg-white/5 text-gray-400 rounded-md"
-          >
-            {tech}
+        
+        {project.isFlagship && (
+          <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
+            {t.projects.strategic}
           </span>
-        ))}
+        )}
       </div>
 
-      <div className="flex gap-4">
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-yellow-400 hover:text-yellow-300 transition-colors font-medium"
-          >
-            <Globe size={14} />
-            Katso live
-          </a>
-        )}
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-          >
-            GitHub
-          </a>
-        )}
+      {/* Body Section */}
+      <div className="p-6 flex-grow flex flex-col">
+        <div className="mb-6 flex-grow">
+          <p className="font-medium text-slate-900 mb-2 leading-snug">
+            {project.tagline}
+          </p>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            {project.description}
+          </p>
+        </div>
+
+        {/* Technical Metrics / Stack */}
+        <div className="pt-6 border-t border-slate-100 mt-auto">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-slate-500 mb-4">
+            {project.techStack.slice(0, 4).map((tech) => (
+              <span key={tech} className="flex items-center gap-1">
+                <span className="w-1 h-1 rounded-full bg-slate-300" />
+                {tech}
+              </span>
+            ))}
+            {project.techStack.length > 4 && <span>+{(project.techStack.length - 4)} more</span>}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex gap-4">
+
+              {project.liveUrl && (
+                <a 
+                  href={project.liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-700 transition-colors group/link"
+                >
+                  <ArrowUpRight size={16} />
+                  <span className="group-hover/link:underline decoration-emerald-500 underline-offset-2">{t.projects.deploy}</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </motion.article>
   );

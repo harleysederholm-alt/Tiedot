@@ -2,83 +2,99 @@
 
 import { motion } from 'framer-motion';
 import { skills } from '@/data/projects';
-import { Brain, Code, Zap, Monitor } from 'lucide-react';
-
-const skillCategories = [
-  { key: 'aiOrchestration', label: 'Tekoäly ja orkestrointi', icon: Zap, color: 'from-yellow-500 to-orange-500', badge: 'YDIN' },
-  { key: 'aiModels', label: 'Kielimallit (2026)', icon: Brain, color: 'from-purple-500 to-pink-500', badge: null },
-  { key: 'development', label: 'Ohjelmistokehitys', icon: Code, color: 'from-emerald-500 to-cyan-500', badge: null },
-  { key: 'itFoundation', label: 'IT-perusosaaminen', icon: Monitor, color: 'from-blue-400 to-cyan-400', badge: 'DATANOMI' },
-];
+import { Brain, Code, Zap, Shield, Layers, Database } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function TechStack() {
+  const { t } = useLanguage();
+
+  const capabilities = [
+    { 
+      id: 'CAP-01',
+      key: 'aiOrchestration', 
+      label: t.techStack.caps.aiOrchestration.label, 
+      description: t.techStack.caps.aiOrchestration.description,
+      icon: Zap, 
+      status: 'Active' 
+    },
+    { 
+      id: 'CAP-02',
+      key: 'aiModels', 
+      label: t.techStack.caps.aiModels.label, 
+      description: t.techStack.caps.aiModels.description,
+      icon: Brain, 
+      status: 'Deployed' 
+    },
+    { 
+      id: 'CAP-03',
+      key: 'development', 
+      label: t.techStack.caps.development.label, 
+      description: t.techStack.caps.development.description,
+      icon: Layers, 
+      status: 'Production' 
+    },
+    { 
+      id: 'CAP-04',
+      key: 'securityData', 
+      label: t.techStack.caps.securityData.label, 
+      description: t.techStack.caps.securityData.description,
+      icon: Shield, 
+      status: 'Audited' 
+    },
+  ];
+
   return (
-    <section id="skills" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Tekninen osaaminen
-          </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Teknologiat ja työkalut autonomisten järjestelmien rakentamiseen.
-          </p>
-        </motion.div>
+    <section id="capabilities" className="py-24 px-6 bg-slate-50 border-y border-slate-200">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-4 gap-12 mb-16">
+          <div className="lg:col-span-1">
+            <h2 className="font-outfit text-4xl font-bold text-slate-900 mb-4 whitespace-pre-line">
+              {t.techStack.title.replace(' ', '\n')}
+            </h2>
+            <div className="h-1 w-20 bg-emerald-600 mb-6" />
+            <p className="text-slate-600 leading-relaxed">
+              {t.techStack.description}
+            </p>
+          </div>
+          
+          <div className="lg:col-span-3 grid md:grid-cols-2 gap-4">
+            {capabilities.map((cap, index) => {
+              const Icon = cap.icon;
+              const capSkills = skills[cap.key as keyof typeof skills];
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {skillCategories.map((category, index) => {
-            const Icon = category.icon;
-            const categorySkills = skills[category.key as keyof typeof skills];
-
-            return (
-              <motion.div
-                key={category.key}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`bg-white/5 backdrop-blur-sm rounded-2xl p-6 border ${
-                  category.badge === 'YDIN' 
-                    ? 'border-yellow-500/50' 
-                    : category.badge === 'DATANOMI'
-                    ? 'border-blue-400/50'
-                    : 'border-white/10'
-                }`}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-lg bg-gradient-to-br ${category.color}`}>
-                    <Icon size={20} className="text-white" />
+              return (
+                <motion.div
+                  key={cap.key}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 border border-slate-200 hover:border-slate-300 transition-colors group"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="p-3 bg-slate-50 rounded-none border border-slate-100 group-hover:bg-emerald-50 group-hover:border-emerald-100 transition-colors">
+                      <Icon size={24} className="text-slate-700 group-hover:text-emerald-700 transition-colors" />
+                    </div>
+                    <span className="text-[10px] font-mono text-slate-400 tracking-widest">{cap.id}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white">{category.label}</h3>
-                  {category.badge && (
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      category.badge === 'YDIN' 
-                        ? 'bg-yellow-500/20 text-yellow-400' 
-                        : 'bg-blue-400/20 text-blue-400'
-                    }`}>
-                      {category.badge}
-                    </span>
-                  )}
-                </div>
+                  
+                  <h3 className="font-outfit text-lg font-bold text-slate-900 mb-2">{cap.label}</h3>
+                  <p className="text-sm text-slate-500 mb-6 min-h-[40px]">{cap.description}</p>
 
-                <div className="flex flex-wrap gap-2">
-                  {categorySkills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 text-sm bg-white/5 text-gray-300 rounded-lg"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+                  <div className="flex flex-wrap gap-2">
+                    {capSkills && capSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2 py-1 text-[11px] font-mono text-slate-600 bg-slate-50 border border-slate-100 uppercase tracking-tight"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
