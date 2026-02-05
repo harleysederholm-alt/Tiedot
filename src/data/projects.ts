@@ -172,17 +172,7 @@ export const projects: Project[] = [
     isPrivate: true,
     githubUrl: 'https://github.com/harleysederholm-alt/Phantomi',
   },
-  {
-    id: 'diamondcli',
-    name: 'DiamondCLI',
-    tagline: 'Autonomous Refactoring Agent',
-    description: 'Orkestroi koodin refaktorointia Gemini 2.0 Flash -mallilla. Self-Healing Code ja automatisoidut Pull Requestit.',
-    techStack: ['Python', 'Gemini 2.0 Flash', 'LangChain', 'GitPython'],
-    achievements: ['Self-Healing Code', 'Strict Typing', 'Multi-Repo Processing'],
-    category: 'ai',
-    isPrivate: false,
-    githubUrl: 'https://github.com/harleysederholm-alt/DiamondCLI',
-  },
+
 
   {
     id: 'sovereign-quantum',
