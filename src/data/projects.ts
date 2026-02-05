@@ -174,3 +174,51 @@ export const projects: Project[] = [
   },
 
 ];
+
+export const skills = {
+  languages: ['Python', 'TypeScript', 'C++', 'Rust', 'Go'],
+  frameworks: ['Next.js 14', 'FastAPI', 'PyTorch', 'TensorFlow', 'React'],
+  infrastructure: ['Docker', 'Kubernetes', 'AWS', 'Google Cloud', 'Vercel'],
+  specialized: ['Z3 Prover', 'LangChain', 'OpenAI API', 'Anthropic API'],
+};
+
+export const timeline = [
+  {
+    year: '2025–Nykyhetki',
+    title: 'AI Solutions Specialist',
+    company: 'Sovereign AI Infrastructure',
+    description: 'Rakennan ja orkestroin itsenäisiä AI-agenttijärjestelmiä ja infrastruktuuria vaativiin käyttökohteisiin.',
+  },
+  {
+    year: '2025–Nykyhetki',
+    title: 'Markkinointijohtaja & Perustaja',
+    company: 'Funkyscbdkauppa.com',
+    description: 'Vastuussa markkinoinnista ja brändäyksestä. Saavutimme 4.7M näyttökertaa TikTokissa orgaanisella kasvulla.',
+  },
+  {
+    year: '2019',
+    title: 'Logistiikkatyöntekijä',
+    company: 'Varastoalan toimijat',
+    description: 'Logistiikkaprosessien suorittaminen ja varastonhallinta.',
+  },
+  {
+    year: '2013–2014',
+    title: 'Aliupseeri (Reservi)',
+    company: 'Puolustusvoimat',
+    description: 'Johtajakoulutus ja ryhmänjohtajan tehtävät.',
+  },
+  {
+    year: '2010–2013',
+    title: 'Datanomi',
+    company: 'Turun Ammatti-instituutti',
+    description: 'IT-alan perustutkinto, painottuen ohjelmistokehitykseen ja järjestelmiin.',
+  },
+];
+
+export const contact = {
+  email: 'harley.sederholm@gmail.com',
+  phone: '0466560557',
+  github: 'https://github.com/harleysederholm-alt',
+  linkedin: 'https://linkedin.com/in/harley-sederholm',
+  location: 'Turku, Finland',
+};
