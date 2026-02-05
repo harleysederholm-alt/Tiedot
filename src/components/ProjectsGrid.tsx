@@ -1,12 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { projects } from '@/data/projects';
+import { projects, projectsEn } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProjectsGrid() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  
+  const currentProjects = language === 'en' ? projectsEn : projects;
 
   return (
     <section id="projects" className="py-24 px-6 bg-white">
@@ -24,7 +26,7 @@ export default function ProjectsGrid() {
            
            <div className="lg:col-span-3">
               <div className="grid md:grid-cols-2 gap-6">
-                {projects.map((project, index) => (
+                {currentProjects.map((project, index) => (
                   <ProjectCard key={project.id} project={project} index={index} />
                 ))}
               </div>

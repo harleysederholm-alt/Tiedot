@@ -19,8 +19,30 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const Icon = categoryIcons[project.category];
+
+  const getCategoryLabel = (category: string, lang: 'fi' | 'en') => {
+    if (lang === 'en') {
+      switch(category) {
+        case 'ai': return 'STRATEGIC';
+        case 'security': return 'SECURITY';
+        case 'web': return 'WEB DEVELOPMENT';
+        case 'data': return 'DATA SCIENCE';
+        case 'saas': return 'SAAS';
+        default: return category.toUpperCase();
+      }
+    } else {
+      switch(category) {
+        case 'ai': return 'STRATEGISET';
+        case 'security': return 'TIETOTURVA';
+        case 'web': return 'WEB-KEHITYS';
+        case 'data': return 'DATATIEDE';
+        case 'saas': return 'SAAS';
+        default: return category.toUpperCase();
+      }
+    }
+  };
 
   return (
     <motion.article
@@ -47,11 +69,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
         
         <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
-          {project.category === 'ai' ? 'STRATEGISET' :
-           project.category === 'security' ? 'TIETOTURVA' :
-           project.category === 'web' ? 'WEB-KEHITYS' :
-           project.category === 'data' ? 'DATATIEDE' :
-           project.category === 'saas' ? 'SAAS' : project.category}
+          {getCategoryLabel(project.category, language)}
         </span>
       </div>
 
