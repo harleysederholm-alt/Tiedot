@@ -82,6 +82,7 @@ export const projects: Project[] = [
     isPrivate: true,
     isFlagship: false,
     githubUrl: 'https://github.com/harleysederholm-alt/Pienhankintavahti',
+  },
   {
     id: 'resilientnav-ai',
     name: 'ResilientNav AI',
