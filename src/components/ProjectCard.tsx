@@ -46,11 +46,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
         
-        {project.isFlagship && (
-          <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
-            {t.projects.strategic}
-          </span>
-        )}
+        <span className="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-100">
+          {project.category === 'ai' ? 'STRATEGISET' :
+           project.category === 'security' ? 'TIETOTURVA' :
+           project.category === 'web' ? 'WEB-KEHITYS' :
+           project.category === 'data' ? 'DATATIEDE' :
+           project.category === 'saas' ? 'SAAS' : project.category}
+        </span>
       </div>
 
       {/* Body Section */}
